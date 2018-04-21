@@ -11,12 +11,14 @@ import 'rxjs/add/operator/map';
 export class Provider {
     key = 'de137a9fc49abdc7';
     url;
+   
   constructor(public http: Http) {
     console.log('Hello Provider Provider');
     this.url = 'http://api.wunderground.com/api/'+ this.key +'/conditions/q';
   }
-  getWeather(){
-    return this.http.get('http://api.wunderground.com/api/de137a9fc49abdc7/conditions/q/CA/San_Francisco.json')
+ 
+  getWeather(country, city){
+    return this.http.get(this.url+'/'+country+'/'+city+'.json')
             .map(res => res.json());
   }
 }

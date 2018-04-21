@@ -1,3 +1,16 @@
-page-meteo {
-
+ ion-grid{
+    background-color: #0b93ee;
+    color: rgb(11, 40, 59);
+    border: 1px rgb(17, 17, 100) solid;
+    width: 30%;
+    margin: center;
+    text-align: center;
+}
+.list, .list-md{
+    margin: center;
+}
+.item, .item-block{
+    background-color: #09079b ;
+    color: white;
+    text-align: center;
 }

@@ -12,17 +12,28 @@
 
 </ion-header>
 
-<ion-content padding>
-    <ion-slides (ionSlideDidChange)='changeText()'>
-        <ion-slide>
-          1
-        </ion-slide>
-        <ion-slide>
-          2
-        </ion-slide>
-        <ion-slide>
-          3
-        </ion-slide>
-      </ion-slides>
-  <button full ion-button (click)="homepage()">{{meteo}}</button>
+<ion-content scroll="false">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+         <ion-list>
+          <form (ngSubmit)="saveDatas()">
+            <ion-item>
+                <ion-label>
+                  Nom du pays
+                </ion-label>
+                <ion-input type="text" [(ngModel)]='country' name='country'></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>
+                  Region
+                </ion-label>
+                <ion-input type="text" [(ngModel)]='city' name='city'></ion-input>
+              </ion-item>
+            <button ion-button type="submit" block>Rechercher</button>
+          </form>
+         </ion-list>
+       </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

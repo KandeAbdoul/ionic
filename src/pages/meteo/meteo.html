@@ -6,20 +6,36 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar >
     <ion-title>meteo</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-    <h1>je suis entrain de faire un test</h1>
-  <ion-grid *ngIf="weather">
-    <ion-row>
-      <ion-col>
-        <h2>{{datas.display_location.full}}</h2>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+<ion-content overflow-scroll="false">
+   <ion-grid>
+     <ion-row>
+       <ion-col width-50 offset-25>
+         <h2 class="title">{{datas.current_observation.display_location.full}}</h2>
+         <div class="icon"><img src="{{datas.current_observation.icon_url}}" alt=""></div>
+         <h2>{{datas.current_observation.weather}}</h2>  
+        <ion-list>
+          <ion-item>
+            <strong>Température: </strong>{{datas.current_observation.temperature_string}}
+          </ion-item>
+          <ion-item>
+            <strong>Humidité: </strong>{{datas.current_observation.relative_humidity}}
+          </ion-item>
+          <ion-item>
+            <strong>Dewpoint: </strong>{{datas.current_observation.dewpoint_string}}
+          </ion-item>
+          <ion-item>
+            <strong>visibility: </strong>{{datas.current_observation.visibility_mi}}
+          </ion-item>
+      </ion-list>
+       </ion-col>
+
+     </ion-row>
+   </ion-grid>
 </ion-content>
